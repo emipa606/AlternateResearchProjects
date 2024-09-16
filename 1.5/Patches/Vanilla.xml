@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ResearchProjectDef[defName="PsychiteRefining"]</xpath>
+    <value>
+      <li Class="AlternateResearchProjects.AlternateResearchModExtension">
+        <alternateResearchProjects>
+          <li>
+            <prerequisite>DrugProduction</prerequisite>
+            <alternates>
+              <li>PsychoidBrewing</li>
+            </alternates>
+          </li>
+        </alternateResearchProjects>
+      </li>
+    </value>
+  </Operation>
+</Patch>
