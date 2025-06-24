@@ -5,7 +5,7 @@ using Verse;
 
 namespace AlternateResearchProjects;
 
-[HarmonyPatch(typeof(MainTabWindow_Research), "ListProjects")]
+[HarmonyPatch(typeof(MainTabWindow_Research), nameof(MainTabWindow_Research.ListProjects))]
 public static class MainTabWindow_Research_ListProjects
 {
     public static void Prefix(MainTabWindow_Research __instance, ResearchProjectDef ___selectedProject)

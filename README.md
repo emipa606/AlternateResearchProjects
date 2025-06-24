@@ -1,6 +1,6 @@
-# [Alternate Research Projects]()
+# [Alternate Research Projects](https://steamcommunity.com/sharedfiles/filedetails/?id=3332424173)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://i.imgur.com/iCj5o7O.png)
 
 There are multiple ways to the same goal!
 
@@ -8,6 +8,20 @@ Research projects can be made to have alternative prerequirements, making it pos
 
 Mod-authors can add a mod-extension to research-projects to define alternate prerequirements.
 Some are included, if you have suggestions for more to include, please leave a comment about it!
+
+Added so far:
+
+
+-  Psychoid Brewing (alt. for Drug Production) for Psychite Refining
+
+
+
+Mods that has patches included:
+
+
+- [GiTS Cyberbrains](https://steamcommunity.com/sharedfiles/filedetails/?id=3272114598)
+
+
 
 Mod idea by DisK
 
@@ -29,4 +43,6 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
+[![Image](https://img.shields.io/github/v/release/emipa606/AlternateResearchProjects?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3332424173) | tags:  alternative goals

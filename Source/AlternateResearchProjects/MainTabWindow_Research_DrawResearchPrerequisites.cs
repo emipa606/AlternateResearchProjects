@@ -6,11 +6,11 @@ using Verse;
 
 namespace AlternateResearchProjects;
 
-[HarmonyPatch(typeof(MainTabWindow_Research), "DrawResearchPrerequisites")]
+[HarmonyPatch(typeof(MainTabWindow_Research), nameof(MainTabWindow_Research.DrawResearchPrerequisites))]
 public static class MainTabWindow_Research_DrawResearchPrerequisites
 {
-    private static readonly Color FulfilledPrerequisiteColor = Color.green;
-    private static readonly Color MissingPrerequisiteColor = ColorLibrary.RedReadable;
+    private static readonly Color fulfilledPrerequisiteColor = Color.green;
+    private static readonly Color missingPrerequisiteColor = ColorLibrary.RedReadable;
 
     public static bool Prefix(Rect rect, ref float y, ResearchProjectDef project)
     {
@@ -25,12 +25,12 @@ public static class MainTabWindow_Research_DrawResearchPrerequisites
         {
             if (!alternates.TryGetValue(prerequisite, out var prerequisiteAlternates))
             {
-                SetPrerequisiteStatusColor(prerequisite.IsFinished);
+                setPrerequisiteStatusColor(prerequisite.IsFinished);
                 Widgets.Label(rect, ref y, $"- {prerequisite.LabelCap}");
                 continue;
             }
 
-            SetPrerequisiteStatusColor(prerequisite.IsFinished || prerequisiteAlternates.Any(def => def.IsFinished));
+            setPrerequisiteStatusColor(prerequisite.IsFinished || prerequisiteAlternates.Any(def => def.IsFinished));
             Widgets.Label(rect, ref y,
                 $"- {prerequisite.LabelCap}/{string.Join("/", prerequisiteAlternates.Select(def => def.LabelCap))}");
         }
@@ -39,7 +39,7 @@ public static class MainTabWindow_Research_DrawResearchPrerequisites
         {
             foreach (var hiddenPrerequisite in project.hiddenPrerequisites)
             {
-                SetPrerequisiteStatusColor(hiddenPrerequisite.IsFinished);
+                setPrerequisiteStatusColor(hiddenPrerequisite.IsFinished);
                 Widgets.Label(rect, ref y, $"- {hiddenPrerequisite.LabelCap}");
             }
         }
@@ -48,8 +48,8 @@ public static class MainTabWindow_Research_DrawResearchPrerequisites
         return false;
     }
 
-    private static void SetPrerequisiteStatusColor(bool present)
+    private static void setPrerequisiteStatusColor(bool present)
     {
-        GUI.color = present ? FulfilledPrerequisiteColor : MissingPrerequisiteColor;
+        GUI.color = present ? fulfilledPrerequisiteColor : missingPrerequisiteColor;
     }
 }
