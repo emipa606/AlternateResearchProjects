@@ -7,7 +7,7 @@ using Verse;
 namespace AlternateResearchProjects;
 
 [StaticConstructorOnStartup]
-public class AlternateResearchProjects
+public static class AlternateResearchProjects
 {
     private static readonly
         Dictionary<ResearchProjectDef, Dictionary<ResearchProjectDef, List<ResearchProjectDef>>>
